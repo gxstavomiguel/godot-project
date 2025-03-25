@@ -1,9 +1,9 @@
 extends Node3D
 
-func _ready():
-	pass
-	
-func _process(delta):
-	var direcao = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+var ballClass = preload("res://Ball.tscn")
 
-pass
+func _on_spawn_timer_timeout() -> void:
+	var point = get_tree().get_nodes_in_group("spawn").pick_random() as Node3D
+	var ball = ballClass.instantiate() as RigidBody3D
+	add_child(ball)
+	ball.global_position = point.global_position

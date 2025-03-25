@@ -8,7 +8,7 @@
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xhfnw"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_xhfnw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

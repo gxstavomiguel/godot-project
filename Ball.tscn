@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpy8muuy6ylcp"]
+
+[ext_resource type="Script" uid="uid://bsk325w6b8m6w" path="res://ball.gd" id="1_gk6bx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lww6v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3tj6u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sr3km"]
+albedo_color = Color(0.603665, 0.131186, 0.164983, 1)
+
+[node name="Ball" type="RigidBody3D" groups=["ball"]]
+script = ExtResource("1_gk6bx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_lww6v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_3tj6u")
+surface_material_override/0 = SubResource("StandardMaterial3D_sr3km")
